@@ -1,6 +1,8 @@
 This file describes the structure of the matlab code used to compute the results from ["Redistributing the Gains From Trade Through Progressive Taxation"](http://www.waugheconomics.com/uploads/2/2/5/6/22563786/lw_tax.pdf)
 
-Contents and description of code...
+---
+
+### Calibration
 
 - ``island_solve_calibrate_NAG.m`` which takes a progressivity parameter and then calibrates and solves for an equilibrium to the economy.
 
@@ -17,26 +19,20 @@ Contents and description of code...
     5. ``fischer_burmeister.m`` used to smooth out the objective function given that the market clearing conditions take on a mixed complementarity problem (either zero or prices are at a bound).
     6. ``brewermap.m`` to make a nice colored heat maps. Not important.
 
-- ``run_all_trade.m`` calibrates and then generates the inverted U curves in Figure 3 and Figure 6. It calls ``island_solve_calibrate_NAG`` to calibrate the economy, then computes welfare for different trade shares and levels of progressivity. Important: The output will be stored in a folder called ``\plot_model_data``. Below are the elements within:
+---
+
+### Compute Optimal Policy
+
+- ``run_all_trade.m`` calibrates and then generates the inverted U curves in Figure 3 and Figure 6. It first calls ``island_solve_calibrate_NAG`` to calibrate the economy, then computes welfare for different trade shares and levels of progressivity. Important: The output will be stored in a folder called ``\plot_model_data``. Below are the elements within:
 
     1. ``plot_take_prog`` which computes welfare for different levels of tax progressivity for a given level of trade.
 
     2. Within this is ``island_solve_counterfact_trade_NAG`` which solves for the trade cost so that the level of trade is correct at the baseline level of progressivity.
 
-    3. ``island_solve_progresive_NAG`` then computes and equilibrium given the trade cost and progressivity.   
-
----
-
-### Calibration
-
-Simply run ``island_solve_calibrate_NAG.m`` with the argument 0.18. To adjust the calibration targets, lines 16-20 contain the other data moments.
-
----
-
-### Compute Optimal Policy
-
-Simply run ``run_all_trade.m`` with the argument 0.18. This combines the calibration step and the
+    3. ``island_solve_progresive_NAG`` then computes and equilibrium given the trade cost and progressivity.  
 
 ---
 
 ### Plotting
+
+- ``plot_model_results.ipynb`` will plot the output of the results above.
