@@ -13,9 +13,17 @@ Contents and description of code...
     1.  ``mobility_labor_supply_smth.m`` given wages, computes the policy functions associated with the households problem by value function iteration.
     2. ``island_invariant.m`` computes the invariant distribution across islands given policy functions from above. Todo: need to explain how this works clearly within the code.
     3. ``compute_consumption.m`` constructs aggregate consumption give policy functions and the invariant distribution.
-    4. ``market_clearing_soe.m`` computes market clearing conditions and other quantities such as aggregate and island level trade shares, given aggregate consumption and policy functions. From here, we have essentially everything to return the excess demand functions at the island level. 
+    4. ``market_clearing_soe.m`` computes market clearing conditions and other quantities such as aggregate and island level trade shares, given aggregate consumption and policy functions. From here, we have essentially everything to return the excess demand functions at the island level.
     5. ``fischer_burmeister.m`` used to smooth out the objective function given that the market clearing conditions take on a mixed complementarity problem (either zero or prices are at a bound).
     6. ``brewermap.m`` to make a nice colored heat maps. Not important.
+
+- ``run_all_trade.m`` calibrates and then generates the inverted U curves in Figure 3 and Figure 6. It calls ``island_solve_calibrate_NAG`` to calibrate the economy, then computes welfare for different trade shares and levels of progressivity. Important: The output will be stored in a folder called ``\plot_model_data``. Below are the elements within:
+
+    1. ``plot_take_prog`` which computes welfare for different levels of tax progressivity for a given level of trade.
+
+    2. Within this is ``island_solve_counterfact_trade_NAG`` which solves for the trade cost so that the level of trade is correct at the baseline level of progressivity.
+
+    3. ``island_solve_progresive_NAG`` then computes and equilibrium given the trade cost and progressivity.   
 
 ---
 
@@ -26,6 +34,8 @@ Simply run ``island_solve_calibrate_NAG.m`` with the argument 0.18. To adjust th
 ---
 
 ### Compute Optimal Policy
+
+Simply run ``run_all_trade.m`` with the argument 0.18. This combines the calibration step and the
 
 ---
 
