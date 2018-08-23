@@ -40,7 +40,7 @@ params.bsmooth = 0.20; % The smoothing parameter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Shocks and the grid...
-params.nshocks = 6; % Set to 10 to exactly replicate paper.
+params.nshocks = 10; % Set to 10 to exactly replicate paper.
 params.grid = [50, -0.45, 6]; % This is hand picked to get 40 percent with < 0 assets.
 params.asset_space =  clustergrid(params.grid(2), 0.05, params.grid(3), 20, 30, 0.7, 0.3);
 %params.asset_space =  linspace(params.grid(2),params.grid(3),params.grid(1));%

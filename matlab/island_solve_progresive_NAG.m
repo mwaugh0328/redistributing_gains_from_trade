@@ -40,7 +40,7 @@ params.bsmooth = 0.20; % The smoothing parameter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Shocks and the grid...
-params.nshocks = 6;
+params.nshocks = 10;
 params.grid = [50, -0.45, 6];
 params.asset_space =  clustergrid(params.grid(2), 0.05, params.grid(3), 20, 30, 0.7, 0.3);
 %params.asset_space =  linspace(params.grid(2),params.grid(3),params.grid(1));%
