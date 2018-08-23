@@ -31,6 +31,8 @@ This file describes the structure of the matlab code used to compute the results
 
     3. ``island_solve_progresive_NAG`` then computes and equilibrium given the trade cost and progressivity.  
 
+    4. ``plot_opt_mag`` computes the marginal tax rate schedules across different policies and the output from this is then plotted in Figure 7.
+
 ---
 
 ### Plotting
